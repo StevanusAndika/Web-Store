@@ -1,0 +1,14 @@
+table :
+
+1. kategori :
+   id 
+   nama
+
+ 2.produk :
+    id :
+    kategori:id
+    nama =>index
+    foto(nullable)
+    detail(text)
+    ketersediaan stok ===> enum(habis,tersedia),default=>tersedia
+    harga

@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.main {
+    height: 100vh;
+}
+
+.login-box {
+    width: 90%; /* Menggunakan persentase agar responsif */
+    max-width: 500px; /* Maksimum lebar tetap 500px */
+    height: 300px;
+    border-radius: 10px;
+    margin: auto; /* Untuk membuatnya berada di tengah */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek visual */
+}
+
+/* Mengubah ukuran font untuk responsif */
+@media screen and (max-width: 768px) {
+    .login-box {
+        font-size: 14px;
+    }
+}
+
+/* Menyesuaikan margin untuk .pagination-nav pada layar yang lebih kecil */
+@media screen and (max-width: 500px) {
+    .pagination-nav {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}

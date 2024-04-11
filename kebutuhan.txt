@@ -1,0 +1,37 @@
+toko online pakaian
+
+kebutuhan :
+terdiri dari 3 halaman (home/utama,produk,tentang kami)
+terdiri dari beberapa  kategori (baju pria,baju wanita,jaket jam tangan,sepatu,kacamat,dompet,dll)
+produk wajib punya 1 kategori
+produk bisa punya foto (boleh kosong jika belum  ada foto)
+produk punya penjelasan detail(deksripsi,ukuran,dll)
+produk punya penjelasan stock(habis/tersedia)
+visitor dapat mencari produk by name (where like query by index)
+website hanya untuk pemasaran/pameran  produk ,pemesanan dan pembelian by  whatsapp dan tf bank
+
+hanya ada 1  akun admin untuk mengatur website(upload produk,tambah produk,kategori,dll)
+
+website menampilkan  instagram ,facebook dan twitter yang bisa diklik
+tampilan harus responsive
+
+
+
+halaman utama :
+1.menu pencarian produk
+2.highlit kategori baju pria ,baju wanita dan sepatu
+3.section tentang kami (1 paragraf)
+4.tampilkan 6 produk dan button see more,jika diklik pindah ke ke halaman produk
+5. tampilka sosial media dan kontak wajib
+
+halaman produk :
+secara default,menampilka  semua produk tanpa terfilter kategori
+produk bisa terfilter sesuai kategori yang terpilih
+produk menampilkan foto,nama,harga dan button untuk menuju halaman detail
+
+tentang kami halaman:
+menanpilkan foto yang berkaitan dengan toko 
+menampilkan text tentang toko
+
+username : admin
+pass ; rahasia
