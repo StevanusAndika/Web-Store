@@ -1,20 +1,6 @@
 <?php
 require "koneksi.php";
 
-$id = htmlspecialchars($_GET['id']);
-
-$stmt = mysqli_prepare($con, "SELECT * FROM produk WHERE id = ?");
-mysqli_stmt_bind_param($stmt, "s", $id);
-mysqli_stmt_execute($stmt);
-
-$result = mysqli_stmt_get_result($stmt);
-$data = mysqli_fetch_array($result);
-
-$produk_terkait_stmt = mysqli_prepare($con, "SELECT * FROM produk WHERE id != ? ORDER BY RAND() LIMIT 4");
-mysqli_stmt_bind_param($produk_terkait_stmt, "s", $id);
-mysqli_stmt_execute($produk_terkait_stmt);
-
-$produk_terkait_result = mysqli_stmt_get_result($produk_terkait_stmt);
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +36,7 @@ $produk_terkait_result = mysqli_stmt_get_result($produk_terkait_stmt);
                     <a class="nav-link " href="index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link active" href="about.php ">about  </a>
+                    <a class="nav-link active" href="# ">Tentang Kami </a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="produk.php">Produk</a>
@@ -61,38 +47,27 @@ $produk_terkait_result = mysqli_stmt_get_result($produk_terkait_stmt);
             </ul>
         </div>
     </nav>
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 mb-3">
-                    <img src="image/<?php echo $data['foto'] ?>" class="w-100">
-                </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <h1><?php echo $data['nama'] ?></h1>
-                    <p class="fs-5">Deskripsi : <?php echo $data['detail'] ?></p>
-                    <p class="teks-harga">Rp <?php echo $data['harga'] ?></p>
-                    <p class="fs-5">Status : <strong><?php echo $data['ketersediaan_stok'] ?></strong></p>
-                </div>
-            </div>
-        </div>
-    </div>
     
-    <div class="container-fluid py-5 warna2">
-        <div class="container">
-            <h2 class="text-center text-white">Produk Terkait</h2>
-            <div class="row">
-                <?php while ($produk = mysqli_fetch_array($produk_terkait_result)) : ?>
-                    <div class="col-lg-3 col-md-6 mb-3">
-                        <a href="detail.php?id=<?php echo $produk['id'] ?>" class="card-link">
-                            <img src="image/<?php echo $produk['foto'] ?>" alt="" class="img-fluid produk-terkait-image img-thumbnail w-full">
-                        </a>
-                    </div>
-                <?php endwhile; ?>
+
+    <div class="container-fluid banner d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="text-white">Tentang Kami </h1>
+            
+               
             </div>
         </div>
-    </div>
+        <div class="container-fluid py-5">
 
-    <?php require "footer.php"; ?>
+        <div class="container fs-5 text-center">
+
+      
+            <p  class="text-center text-dark" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptatum rem non adipisci ratione beatae voluptate esse corrupti, animi ducimus asperiores, explicabo ipsa odit consectetur rerum. At, molestiae. Odio, dolorum vitae. Error temporibus consequatur eum vitae harum quos. Libero et voluptatem neque, dignissimos eligendi nam in dicta officia laboriosam, nisi molestias saepe? Quas quisquam ratione rem quo consequuntur eveniet impedit, voluptates quis nesciunt iste similique, ut dolorum repellat eligendi molestias unde amet. Reprehenderit, itaque rerum? Dolores reprehenderit perferendis, minus at quasi molestias iste accusantium laborum! Consequatur assumenda sapiente expedita optio blanditiis provident ipsam doloremque, id, saepe ad quo nihil voluptatem?</p>
+            <P class="text-center text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sed dolor natus sequi similique distinctio at ipsa officia, nemo voluptatum modi eligendi iure non id minus? Laborum, ullam eaque incidunt aliquam quos libero, nemo tempora et ipsam voluptatem asperiores! Illum veritatis officia, expedita aspernatur voluptatem culpa! Nobis laudantium reiciendis ipsam sed possimus voluptate. Esse, reiciendis iure quas, nisi sequi delectus quis asperiores beatae in facere consectetur numquam enim nemo ipsum qui. Minus quibusdam dolor magni excepturi in aliquam quia porro.</P>
+        </div>
+        </div>
+    </div>
+    <?php include 'footer.php'; ?>
+
 
     <!-- Bootstrap JS -->
     <script src="vendor/jquery/jquery.min.js"></script>

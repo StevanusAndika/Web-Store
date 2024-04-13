@@ -18,6 +18,11 @@
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek visual */
 }
+.produk-terkait-image {
+    object-fit: cover;
+    object-position: center;
+}
+
 
 /* Mengubah ukuran font untuk responsif */
 @media screen and (max-width: 768px) {
@@ -32,4 +37,10 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
+    .footer {
+        margin-top: 10px;
+    }
+}
+.list-group{
+    text-decoration: none;
 }

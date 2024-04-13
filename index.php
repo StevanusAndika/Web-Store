@@ -1,7 +1,6 @@
 <?php
 require "koneksi.php";
-
-$produk = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM produk LIMIT 6");
+$produk = mysqli_query($con, "SELECT * FROM produk");
 ?>
 
 <!DOCTYPE html>
@@ -11,20 +10,22 @@ $produk = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM produk L
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Produk</title>
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- Option 1: Include in HTML -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <!-- Custom styles for this template-->
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- Custom styles -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/page.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark warna1 ml-auto">
-        <a class="navbar-brand" href="#">Fashion Store<i class="fa fa-tshirt text-white"></i></a>
+        <a class="navbar-brand" href="#">Fashion Store <i class="fa fa-tshirt text-white"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,10 +36,10 @@ $produk = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM produk L
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Kategori</a>
+                    <a class="nav-link" href="about.php">Tentang kami </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Produk</a>
+                    <a class="nav-link" href="produk.php">Produk</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="adminpanel/login.php">Login</a>
@@ -54,7 +55,7 @@ $produk = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM produk L
             <div class="col-md-8 offset-md-2">
                 <form action="produk.php" method="post">
                     <div class="input-group input-group-lg my-4">
-                        <input type="text" class="form-control" placeholder="Cari Produk">
+                        <input type="text" class="form-control" placeholder="Cari Produk" name="keyword">
                         <div class="input-group-append">
                             <button class="btn btn-primary text-white" type="submit">Cari</button>
                         </div>
@@ -87,9 +88,7 @@ $produk = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM produk L
         </div>
     </div>
 
-    <!-- anout us -->
-
-    <div class="container-fluid warna3 py-5">
+    <div class="container-fluid warna3 py-5"id ="about">
         <div class="container text-center">
             <h3>Tentang Kami</h3>
             <p class="fs-5 mt-3 text-dark">
@@ -117,44 +116,19 @@ $produk = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM produk L
                 <?php } ?>
             </div>
         </div>
+        <button class="btn btn-outline-primary mt-3" onclick="window.location.href='produk.php';">Lihat semua produk</button>
     </div>
 
-    <!-- Footer -->
-    <div class="container-fluid py-5 content-subscribe text-light">
-        <div class="container">
-            <h5 class="text-center mb-4">Temui Toko Kami</h5>
-            <div class="row justify-content-center">
-                <div class="col-sm-1 d-flex justify-content-center mb-2">
-                    <i class="bi bi-facebook fs-4"></i>
-                </div>
-                <div class="col-sm-1 d-flex justify-content-center mb-2">
-                    <i class="bi bi-instagram fs-4"></i>
-                </div>
-                <div class="col-sm-1 d-flex justify-content-center mb-2">
-                    <i class="bi bi-twitter fs-4"></i>
-                </div>
-                <div class="col-sm-1 d-flex justify-content-center mb-2">
-                    <i class="bi bi-whatsapp fs-4"></i>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php require "footer.php"; ?>
 
-    <footer class="container-fluid py-3 bg-dark text-light  w-100">
-        <div class="container d-flex justify-content-between">
-            <p class="m-0">Copyright &copy; Your Website 2022</p>
-            <p class="m-0">Desain : <a href="https://startbootstrap.com/theme/sb-admin-2" class="text-decoration-none text-light">Start Bootstrap</a></p>
-        </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
+    <!-- Core plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
+    <!-- Custom scripts for all pages -->
     <script src="js/sb-admin-2.min.js"></script>
 
 </body>
